@@ -13,13 +13,14 @@ import os
 port = 1883 # default port
 Server_ip = os.getenv("SERVER_IP")
 
-Update_Topic = os.getenv("UPDTE_TOPIC")
-Subscribe_Topic = os.getenv("SUBSCRIBE_TOPIC")
-Publish_Topic = os.getenv("PUBLISH_TOPIC")
+Update_Topic = "@shadow/data/get"
+Subscribe_Topic = "@private/shadow/data/get/response"
+Publish_Topic = "@shadow/data/update"
 
 Client_ID = os.getenv("CLIENT_ID")
 Token = os.getenv("TOKEN")
 Secret = os.getenv("SECRET")
+
 
 MqttUser_Pass = {"username":Token,"password":Secret}
 candy_data = {
