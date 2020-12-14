@@ -1,4 +1,4 @@
-from gpiozero import DistanceSensor, LED, Buzzer
+from gpiozero import DistanceSensor, LED
 import time
 
 sensor = DistanceSensor(23,24,max_distance=1,threshold_distance=0.2)
@@ -10,10 +10,23 @@ def print_distance():
 def is_swipe():
     return sensor.in_range
 
-# while True:
-#     print('Distance to nearest object is', sensor.distance, 'm')
-#     if(sensor.in_range):
-#         led.on()
-#     else:
-#         led.off()
-#     time.sleep(0.5)
+def run_distance():
+    f = open('csvfile.csv','w')
+    
+    while True:
+        try:
+            f.write(str(sensor.distance)+'\n')
+            print(sensor.distance)
+            if(sensor.in_range):
+                led.on()
+                
+            else:
+                led.off()
+                
+            time.sleep(0.5)
+        
+        except KeyboardInterrupt:
+            f.close()
+            break
+
+# run_distance()

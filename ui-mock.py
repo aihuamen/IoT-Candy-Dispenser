@@ -41,12 +41,6 @@ pygame.init()
 screen = pygame.display.set_mode((X,Y))
 pygame.display.set_caption("Candy Dispenser")
 
-# while True:
-#     img_path = img_path+'/others/capture{}.jpg'.format(str(guest_no))
-#     if(not os.path.exists(img_path)):
-#         break
-#     guest_no += 1
-
 #------------Components--------------------
 
 def text_objects(text, font, color):

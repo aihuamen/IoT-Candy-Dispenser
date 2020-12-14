@@ -41,7 +41,7 @@ while True:
     # Grab a single frame of video
     ret, frame = video_capture.read()
 
-    scale_percent = 70 # percent of original size
+    scale_percent = 50 # percent of original size
     width = int(frame.shape[1] * scale_percent / 100)
     height = int(frame.shape[0] * scale_percent / 100)
     dim = (width, height)

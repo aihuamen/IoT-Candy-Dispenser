@@ -5,6 +5,7 @@ from time import sleep
 from detect_face import detect_face, detect_admin
 from ultrasonic import is_swipe
 from mqtt import *
+# from uart import send_weight
 
 #-----------------Const---------------------
 
@@ -29,7 +30,7 @@ clock = pygame.time.Clock()
 #----------------Let-----------------------
 
 guest_no = 1
-weight = "20"
+weight = '20'
 
 #---------------Setup----------------------
 
@@ -211,6 +212,8 @@ def candy_complete(person):
     is_admin = True if person in admin else False
     global guest_no
     global weight
+
+    # send_weight(weight+'\r')
 
     if(is_admin):
         os.remove('./pic/faces/others/capture{}.jpg'.format(str(guest_no)))
